@@ -107,11 +107,12 @@ FILE *open_db_file() {
   
 void free_entries(entry *p) {
   /* TBD */
-  entry *p_nxt;
-  while(p!=NULL){
-   p_nxt=p->next;
-    free(p);
-    p = p_nxt;
+entry *temp=p;
+  entry *tmp_nxt;
+  while(temp!=NULL){
+    tmp_nxt=temp->next;
+    free(temp);
+    temp=tmp_nxt;
   }
   //printf("Memory is not being freed. This needs to be fixed!\n");  
 }
