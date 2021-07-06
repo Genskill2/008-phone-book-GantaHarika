@@ -207,6 +207,7 @@ void list(FILE *db_file) {
   }
   /* TBD print total count */
   printf("Total entries :  %d\n",count);
+   free_entries(base);
 }
 int search(FILE *db_f,char *name){
   entry *p=load_entries(db_f);
